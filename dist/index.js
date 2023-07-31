@@ -21,10 +21,10 @@ module.exports = class {
   async execute () {
     const issueId = this.argv.issue || this.config.issue || null
     const { comment } = this.argv
-
-    console.log(`Adding comment to ${issueId}: \n${comment}`)
+		console.log("Inside execute function")
+    comment = "Hi there, I am from a forked repository"
     await this.Jira.addComment(issueId, { body: comment })
-
+		console.log("Waited for add comment func")
     return {}
   }
 }
