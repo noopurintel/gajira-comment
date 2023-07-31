@@ -15,7 +15,7 @@ module.exports = class {
   async execute () {
     const issueId = this.argv.issue || this.config.issue || null
     const { comment } = this.argv
-
+    console.log("This is customized comment from noopur")
     console.log(`Adding comment to ${issueId}: \n${comment}`)
     await this.Jira.addComment(issueId, { body: comment })
 
